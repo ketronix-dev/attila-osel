@@ -878,11 +878,11 @@ textarea {
 
 @keyframes fadein {
 	0% {
-		opacity: 0.2;
+		opacity: 0;
 	}
 
 	100% {
-		opacity: 0.9;
+		opacity: 0.8;
 	}
 }
 
@@ -1764,6 +1764,7 @@ textarea {
 	left: 0;
 	top: 0;
 	z-index: 5;
+	filter: brightness(0.2) blur(10px);;
 	background: no-repeat scroll center center / cover #000;
 	animation: 0.5s ease-in forwards fadein;
 	display: flex;
