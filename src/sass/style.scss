@@ -65,6 +65,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background: var(--color-background-main);
+	transition: background-color 0.4s;
 }
 
 button,
