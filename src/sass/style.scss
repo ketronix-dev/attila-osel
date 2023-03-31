@@ -1015,6 +1015,20 @@ textarea {
 	font-size: 2em;
 	line-height: 2em;
 	color: var(--color-content-secondary);
+	opacity: 0;
+	animation: show-text 0.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes show-text {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .has-cover .blog-description {
