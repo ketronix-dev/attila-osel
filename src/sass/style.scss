@@ -99,7 +99,7 @@ textarea {
 	h5,
 	h6 {
 		line-height: 1.25em;
-		margin: 0 0 4rem;
+		margin: 3rem 0 2rem;
 		text-rendering: optimizeLegibility;
 		color: var(--color-content-lead);
 	}
@@ -139,7 +139,7 @@ textarea {
 
 	p {
 		font-family: var(--font-secondary);
-		margin: 0 0 4rem;
+		margin: 0 0 2.5rem;
 	}
 
 	ol,
@@ -292,7 +292,7 @@ textarea {
 
 	pre {
 		position: relative;
-		margin: 0 0 4rem;
+		margin: 0 0 2rem;
 		padding: 1em;
 		overflow: hidden;
 		font-family: monospace, sans-serif;
@@ -543,8 +543,8 @@ textarea {
 		}
 	}
 
-	.kg-card {
-		margin: 0 0 4rem;
+	figure {
+		margin: 0rem 0 2rem;
 	}
 
 	// KG File
