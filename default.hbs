@@ -124,7 +124,9 @@
 		}
 		var clipboard = new ClipboardJS('.btn-copy', {
 			target: function(trigger) {
-			return trigger.previousSibling;
+				trigger.innerText = 'Copied!'
+				setTimeout(() => trigger.innerText = 'Copy', 1000)
+				return trigger.previousSibling;
 			}
 		});
 	</script>
