@@ -1,46 +1,46 @@
-jQuery(function($) {
+jQuery(function ($) {
 
   var html = $('html');
   var viewport = $(window);
 
-/* ==========================================================================
-   Menu
-   ========================================================================== */
+  /* ==========================================================================
+     Menu
+     ========================================================================== */
 
   function menu() {
     html.toggleClass('menu-active');
   };
 
   $('#menu').on({
-    'click': function() {
+    'click': function () {
       menu();
     }
   });
 
   $('.nav-menu').on({
-    'click': function() {
+    'click': function () {
       menu();
     }
   });
 
   $('.nav-close').on({
-    'click': function() {
+    'click': function () {
       menu();
     }
   });
 
   viewport.on({
-    'resize': function() {
+    'resize': function () {
       html.removeClass('menu-active');
     },
-    'orientationchange': function() {
+    'orientationchange': function () {
       html.removeClass('menu-active');
     }
   });
 
-/* ==========================================================================
-   Parallax cover
-   ========================================================================== */
+  /* ==========================================================================
+     Parallax cover
+     ========================================================================== */
 
   var cover = $('.cover');
   var coverPosition = 0;
@@ -53,6 +53,7 @@ jQuery(function($) {
         '-webkit-transform': 'translate3d(0, ' + coverPosition + 'px, 0)',
         'transform': 'translate3d(0, ' + coverPosition + 'px, 0)'
       });
+      (viewport.scrollTop() < cover.height()) ? html.addClass('cover-active'): html.removeClass('cover-active');
     }
   }
   prlx();
@@ -69,14 +70,14 @@ jQuery(function($) {
     }
   });
 
-/* ==========================================================================
-   Gallery
-   ========================================================================== */
+  /* ==========================================================================
+     Gallery
+     ========================================================================== */
 
   function gallery() {
     'use strict';
     var images = document.querySelectorAll('.kg-gallery-image img');
-    images.forEach(function(image) {
+    images.forEach(function (image) {
       var container = image.closest('.kg-gallery-image');
       var width = image.attributes.width.value;
       var height = image.attributes.height.value;
@@ -87,9 +88,9 @@ jQuery(function($) {
   gallery();
 
 
-/* ==========================================================================
-   Theme
-   ========================================================================== */
+  /* ==========================================================================
+     Theme
+     ========================================================================== */
 
   function theme() {
     'use strict';
@@ -117,13 +118,13 @@ jQuery(function($) {
     switch (localStorage.getItem('attila_theme')) {
       case 'dark':
         dark();
-      break;
+        break;
       case 'light':
         light();
-      break;
+        break;
       default:
         system();
-      break;
+        break;
     }
 
     toggle.on('click', function (e) {
