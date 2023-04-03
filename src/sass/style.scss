@@ -324,11 +324,12 @@ textarea {
 		background: var(--color-background-secondary);
 		user-select: none;
 		-webkit-user-select: none;
+		text-align: center;
 	}
 
 	pre .lines .line {
 		display: block;
-		padding-right: 0.33334em;
+		padding-right: 0;
 	}
 
 	pre code,
@@ -1964,6 +1965,8 @@ textarea {
 	@media only screen and (max-width: $breakpoint-small) {
 		-webkit-hyphens: auto;
 		hyphens: auto;
+		font-size: 2.5em;
+		margin: 0 0 1rem;
 	}
 
 	a {
@@ -1996,6 +1999,10 @@ textarea {
 	margin: 0 0 4rem;
 	font-size: 6em;
 	line-height: 1.25em;
+	@media only screen and (max-width: $breakpoint-small) {
+		font-size: 2.5em;
+		margin: 0 0 1rem;
+	}
 }
 
 .has-cover .post-title {
@@ -2017,6 +2024,11 @@ textarea {
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	@media only screen and (max-width: $breakpoint-small) {
+		font-size: 1.4em;
+		margin: 0 0 1rem;
 	}
 }
 
