@@ -6,6 +6,7 @@
   --color-content-lead: #000;
   --color-content-main: #222426;
   --color-content-secondary: #73777D;
+  --color-hljs-content: #383a42;
 }
 
 .theme-dark:root {
@@ -16,6 +17,7 @@
   --color-content-lead: #FFF;
   --color-content-main: #E1E3E6;
   --color-content-secondary: #909499;
+  --color-hljs-content: #e9e9e9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,5 +29,6 @@
     --color-content-lead: #FFF;
     --color-content-main: #E1E3E6;
     --color-content-secondary: #909499;
+    --color-hljs-content: #e9e9e9;
   }
 }
