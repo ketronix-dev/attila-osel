@@ -146,6 +146,11 @@ jQuery(function ($) {
 
   // Add event handlers to each image
   images.forEach(image => {
+    // If the image is a link - prohibit its proximity
+    if (image.parentElement.tagName = 'A') {
+      image.style.cursor = 'inherit'
+      return
+    }
     image.addEventListener('click', () => {
       // A container that will stretch to the entire screen and have our picture in the middle
       const container = document.createElement('div');
