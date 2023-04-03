@@ -147,7 +147,7 @@ jQuery(function ($) {
   // Add event handlers to each image
   images.forEach(image => {
     // If the image is a link - prohibit its proximity
-    if (image.parentElement.tagName = 'A') {
+    if (image.parentElement.tagName === 'A') {
       image.style.cursor = 'inherit'
       return
     }
