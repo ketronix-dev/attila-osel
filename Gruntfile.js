@@ -15,7 +15,8 @@ module.exports = function(grunt) {
       'jsDependencies': [
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
-        '<%= config.jsSrcDir %>/libs/highlight.pack.js'
+        '<%= config.jsSrcDir %>/libs/highlight.min.js',
+        '<%= config.jsSrcDir %>/libs/clipboard.min.js'
       ]
     },
     copy: {
