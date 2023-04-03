@@ -36,5 +36,10 @@
     "Footer": "ذيل",
     "Pagination": "الترقيم",
     "Next post": "المنشور التالي",
-    "Previous post": "المنشور السابق"
+    "Previous post": "المنشور السابق",
+    "Light theme": "موضوع الضوء",
+    "System theme": "موضوع النظام",
+    "Dark theme": "موضوع الظلام",
+    "Copy": "نسخ",
+    "Copied": "نسخ!"
 }

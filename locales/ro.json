@@ -28,5 +28,10 @@
     "Author": "Autor",
     "Topic": "Subiect",
     "Share": "Distribuie",
-    "Search": "Caută"
+    "Search": "Caută",
+    "Light theme": "Temă lumină",
+    "System theme": "Temă sistem",
+    "Dark theme": "Temă dreaptă",
+    "Copy": "Copiere",
+    "Copied": "Copiat"
 }

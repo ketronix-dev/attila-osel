@@ -1650,6 +1650,7 @@ textarea {
 	padding-top: calc(12rem + 8vw);
 	padding-bottom: 4rem;
 	margin-top: auto;
+	font-weight: 600;
 
 	.inner {
 		max-width: none;
@@ -1817,7 +1818,9 @@ textarea {
 	}
 }
 
-.theme-text {}
+.theme-text {
+	font-weight: 600;
+}
 
 /* ==========================================================================
    Index

@@ -14,9 +14,10 @@
 	{{!-- Styles'n'Scripts --}}
 	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/base16/solarized-dark.min.js"></scr/default.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highipt>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/solarized-dark.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+
 
 
 
@@ -98,7 +99,7 @@
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{/if}}
-				<span class="nav-credits"><a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
+				<span class="nav-credits"><a class="menu-item js-theme" href="#" data-system="{{t "System theme"}}" data-dark="{{t "Dark theme"}}" data-light="{{t "Light theme"}}"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
 			</nav>
 		</div>
 
@@ -119,13 +120,13 @@
 		for (var i = 0; i < codeBlocks.length; i++) {
 			var button = document.createElement('button');
 			button.className = 'btn-copy';
-			button.textContent = 'Copy';
+			button.innerHTML = '{{t "Copy" }}';
 			codeBlocks[i].appendChild(button);
 		}
 		var clipboard = new ClipboardJS('.btn-copy', {
 			target: function(trigger) {
-				trigger.innerText = 'Copied!'
-				setTimeout(() => trigger.innerText = 'Copy', 1000)
+				trigger.innerText = '{{t "Copied" }}'
+				setTimeout(() => trigger.innerText = '{{t "Copy" }}', 1000)
 				return trigger.previousSibling;
 			}
 		});

@@ -28,5 +28,10 @@
     "Author": "Autorius",
     "Topic": "Tema",
     "Share": "Dalintis",
-    "Search": "Ieškoti"
+    "Search": "Ieškoti",
+    "Light theme": "Laiškai tema",
+    "System theme": "Sistemos tema",
+    "Dark theme": "Tamsi tema",
+    "Copy": "Kopijuoti",
+    "Copied": "Kopijuotas"
 }

@@ -29,5 +29,10 @@
     "Topic": "Tópico",
     "Article": "Artigo",
     "Share": "Compartilhar",
-    "Search": "Buscar"
+    "Search": "Buscar",
+    "Light theme": "Tema luz",
+    "System theme": "Tema de sistema",
+    "Dark theme": "Tema escuro",
+    "Copy": "Copiar",
+    "Copied": "Copiado"
 }

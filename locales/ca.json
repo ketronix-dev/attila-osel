@@ -28,5 +28,10 @@
     "Author": "Autor",
     "Topic": "Tema",
     "Share": "Compartir",
-    "Search": "Buscar"
+    "Search": "Buscar",
+    "Light theme": "Tema ligero",
+    "System theme": "Tema sistema",
+    "Dark theme": "Tema escuro",
+    "Copy": "Copiar",
+    "Copied": "Copiar"
 }

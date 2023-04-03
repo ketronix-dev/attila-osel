@@ -36,5 +36,10 @@
     "Footer": "Voettekst",
     "Pagination": "Paginering",
     "Next post": "Volgend bericht",
-    "Previous post": "Vorig bericht"
+    "Previous post": "Vorig bericht",
+    "Light theme": "Licht thema",
+    "System theme": "Systeem thema",
+    "Dark theme": "Hoofd thema",
+    "Copy": "Kopiëren",
+    "Copied": "Gekopieerd"
 }
