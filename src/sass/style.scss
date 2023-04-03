@@ -15,6 +15,12 @@ $inner: calc(64rem + 20vw);
    My Styles
    ========================================================================== */
 
+img[scalable] {
+	cursor: pointer;
+	transition-property: max-width, max-height, left, top;
+	transition-duration: 0.3s;
+}
+
 .btn-copy {
 	position: absolute;
 	top: 0;
@@ -510,6 +516,105 @@ textarea {
 	.button:focus {}
 }
 
+// The background that appears when you open the picture.
+.darkening-background {
+	display: flex;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9998;
+	align-items: center;
+	justify-items: center;
+	animation: fade-in 0.5s forwards;
+}
+
+.darkening-background p {
+	font-family: var(--font-secondary);
+	font-size: 1.5em;
+	color: #c2c2c2;
+	position: absolute;
+	align-self: flex-end;
+	justify-self: flex-start;
+	line-height: 1.3em;
+	margin-left: 10px;
+	animation: fade-in-p 0.5s forwards;
+	@media only screen and (max-width: $breakpoint-small) {
+		font-size: 4vw;
+	}
+}
+
+.darkening-background img {
+	cursor: zoom-in;
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+// Smooth appearance of black blackout
+@keyframes fade-in {
+	from {
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	to {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+}
+
+@keyframes fade-out {
+	from {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	to {
+		background-color: rgba(0, 0, 0, 0);
+	}
+}
+
+@keyframes fade-in-p {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out-p {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+// Beautiful appearance of the picture
+@keyframes fade-in-img {
+	from {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes fade-out-img {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(0);
+	}
+}
+
 /* ==========================================================================
    KG Cards
    ========================================================================== */
@@ -545,6 +650,10 @@ textarea {
 
 	figure {
 		margin: 0rem 0 2rem;
+	}
+
+	figure img {
+		cursor: zoom-in;
 	}
 
 	// KG File
@@ -1764,7 +1873,8 @@ textarea {
 	left: 0;
 	top: 0;
 	z-index: 5;
-	filter: brightness(0.2) blur(10px);;
+	filter: brightness(0.2) blur(10px);
+	;
 	background: no-repeat scroll center center / cover #000;
 	animation: 0.5s ease-in forwards fadein;
 	display: flex;
