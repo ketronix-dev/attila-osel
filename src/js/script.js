@@ -254,8 +254,7 @@ jQuery(function ($) {
         img.removeEventListener('click', clickHandler)
         img.removeEventListener('mousemove', mouseMoveHandler)
         img.removeEventListener('wheel', mouseWheelHandler)
-
-        // After moving the picture to the center of the screen - play the closing animation
+        
         function hideAnimation () {
           delete img.style.transfrom
           container.style.animation = 'fade-out 0.2s forwards'
@@ -263,13 +262,12 @@ jQuery(function ($) {
           img.style.animation = `fade-out-img 0.2s forwards`
         }
 
-        // If the picture is shifted
         const pictureShifted = offsetX !== 0 && offsetY !== 0;
-
         // Move the picture to the center of the screen (smoothly)
         if (pictureShifted) {
           img.style.transition = '0.1s'
           img.style.transform = `translate(0px, 0px) scale(1)`;
+          // After moving the picture to the center of the screen - play the closing animation
           setTimeout(hideAnimation, 100)
         } else hideAnimation()
 
@@ -278,7 +276,7 @@ jQuery(function ($) {
           img.remove()
           style.remove()
           container.remove()
-        }, (pictureShifted ? 600 : 500)
+        }, (pictureShifted ? 600 : 500))
       }
     });
   });
