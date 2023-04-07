@@ -169,7 +169,7 @@ jQuery(function ($) {
       const style = document.createElement('style');
       style.innerHTML = '* { overflow: hidden; }';
       document.head.appendChild(style);
-      
+
       // Connecting all the elements to the site
       container.append(p)
       container.append(img)
@@ -203,7 +203,7 @@ jQuery(function ($) {
       function clickHandler(event) {
         startX = event.clientX - offsetX;
         startY = event.clientY - offsetY;
-        
+
         // Reduce the picture if you click a second time
         if (isMouseClick) {
           zoom -= 0.20
@@ -235,7 +235,7 @@ jQuery(function ($) {
         img.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${zoom})`;
       }
 
-      function escKeypressHandler (event) {
+      function escKeypressHandler(event) {
         if (event.keyCode === 27 || event.key === "Escape") {
           clearEvents(event)
         }
@@ -247,15 +247,15 @@ jQuery(function ($) {
       container.addEventListener('click', clearEvents);
       document.addEventListener("keydown", escKeypressHandler);
 
-      function clearEvents () {
+      function clearEvents() {
         container.removeEventListener('click', clearEvents);
         container.removeEventListener('keydown', escKeypressHandler);
-        
+
         img.removeEventListener('click', clickHandler)
         img.removeEventListener('mousemove', mouseMoveHandler)
         img.removeEventListener('wheel', mouseWheelHandler)
-        
-        function hideAnimation () {
+
+        function hideAnimation() {
           delete img.style.transfrom
           container.style.animation = 'fade-out 0.2s forwards'
           p.style.animation = 'fade-out-p 0.2s forwards'
@@ -280,4 +280,39 @@ jQuery(function ($) {
       }
     });
   });
+
+  // When reaching the end of the page - we hide the "Subscribe" button
+  function handleMutation(mutationsList, observer) {
+    let subcribeButton = document.querySelector('#ghost-portal-root iframe')
+    if (subcribeButton) {
+      subcribeButton = document.querySelector('#ghost-portal-root iframe')
+      let endOfPage = false;
+      
+      window.addEventListener('scroll', function () {
+        const scrollHeight = Math.max(
+          document.documentElement.scrollHeight,
+          document.body.scrollHeight
+        );
+
+        const scrollTop = Math.max(
+          document.documentElement.scrollTop,
+          document.body.scrollTop
+        );
+
+        const clientHeight = document.documentElement.clientHeight;
+        if (scrollTop + clientHeight >= scrollHeight && !endOfPage) {
+          endOfPage = true;
+          subcribeButton.style.transition = '0.1s'
+          subcribeButton.style.right = '-186px'
+        } else if (scrollTop + clientHeight < scrollHeight && endOfPage) {
+          endOfPage = false;
+          subcribeButton.style.right = '0px'
+        }
+      });
+      observer.disconnect();
+    }
+  }
+
+  const observer = new MutationObserver(handleMutation);
+  observer.observe(document.body, { childList: true, subtree: true });
 });
