@@ -44,16 +44,26 @@ jQuery(function ($) {
 
   var cover = $('.cover');
   var coverPosition = 0;
+  var coverActive = true;
 
   function prlx() {
     if (cover.length >= 1) {
-      var windowPosition = viewport.scrollTop();
-      (windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25) : coverPosition = 0;
-      cover.css({
-        '-webkit-transform': 'translate3d(0, ' + coverPosition + 'px, 0)',
-        'transform': 'translate3d(0, ' + coverPosition + 'px, 0)'
-      });
-      (viewport.scrollTop() < cover.height()) ? html.addClass('cover-active') : html.removeClass('cover-active');
+      if (coverActive) {
+        var windowPosition = viewport.scrollTop();
+        (windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25) : coverPosition = 0;
+        cover.css({
+          '-webkit-transform': 'translate3d(0, ' + coverPosition + 'px, 0)',
+          'transform': 'translate3d(0, ' + coverPosition + 'px, 0)'
+        });
+      }
+
+      if (viewport.scrollTop() < cover.height()) {
+        html.addClass('cover-active')
+        coverActive = true;
+      } else {
+        html.removeClass('cover-active');
+        coverActive = false;
+      }
     }
   }
   prlx();
@@ -287,7 +297,7 @@ jQuery(function ($) {
     if (subcribeButton) {
       subcribeButton = document.querySelector('#ghost-portal-root iframe')
       let endOfPage = false;
-      
+
       window.addEventListener('scroll', function () {
         const scrollHeight = Math.max(
           document.documentElement.scrollHeight,
