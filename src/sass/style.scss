@@ -84,6 +84,9 @@ textarea {
 .post-content {
 	font-size: 1.75em;
 	line-height: 2em;
+	@media (max-width: $breakpoint-medium) {
+		font-size: 1.6em;
+	}
 
 	a:not([class]) {
 		color: inherit;
@@ -118,6 +121,9 @@ textarea {
 	h2 {
 		font-size: 3rem;
 		text-indent: -1px;
+		@media (max-width: $breakpoint-medium) {
+			font-size: 2.5rem;
+		}
 	}
 
 	h3 {
