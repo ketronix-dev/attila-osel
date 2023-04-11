@@ -104,6 +104,14 @@ jQuery(function ($) {
 
   function theme() {
     'use strict';
+    function changeCommentColorTheme (dark) {
+      try {
+        document.querySelector('#ghost-comments-root').firstChild.contentDocument.querySelector(".ghost-display").className = "ghost-display" + (dark ? ' dark' : '')
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
     var toggle = $('.js-theme');
     var toggleText = toggle.find('.theme-text');
 
@@ -115,12 +123,14 @@ jQuery(function ($) {
 
     function dark() {
       html.removeClass('theme-light').addClass('theme-dark');
+      changeCommentColorTheme(true)
       localStorage.setItem('attila_theme', 'dark');
       toggleText.text(toggle.attr('data-dark'));
     }
 
     function light() {
       html.removeClass('theme-dark').addClass('theme-light');
+      changeCommentColorTheme()
       localStorage.setItem('attila_theme', 'light');
       toggleText.text(toggle.attr('data-light'));
     }
